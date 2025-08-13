@@ -1,0 +1,63 @@
+# Smart Agriculture IoT Irrigation System (Blynk + Precision Algorithms)
+
+## 📌 Requirements
+- NodeMCU ESP8266 or ESP32
+- DHT11/DHT22 sensor
+- Analog soil moisture sensor
+- Relay module
+- Blynk IoT account
+
+---
+
+## 1️⃣ Hardware Wiring
+- DHT Data → D4
+- Soil Sensor Analog → A0
+- Relay IN → D2
+- Common GND
+- VCC: 3.3V for ESP & sensors, Relay as required
+
+---
+
+## 2️⃣ Blynk Setup
+1. Create Template in Blynk Cloud
+   - Device: ESP8266
+   - Data Streams:
+     - V1: Temperature
+     - V2: Humidity
+     - V3: Soil Moisture
+     - V4: Pump Control (Switch)
+     - V5: Moisture Threshold (Slider)
+2. Get your **Auth Token** from Device Info.
+
+---
+
+## 3️⃣ Arduino IDE Setup
+- Install libraries:
+  - Blynk
+  - ESP8266WiFi
+  - DHT sensor & Adafruit Unified Sensor
+- Add credentials.h & config.h to your sketch.
+- Upload main_code.ino to ESP module.
+
+---
+
+## 4️⃣ Precision Algorithms Included
+- **Sensor Calibration** factor in config.h
+- **Moving Average Filtering** for soil readings
+- **Dynamic Thresholding** adjustable remotely
+- **Multi-Sensor Fusion Ready** (expandable)
+- **Anomaly Detection** with Blynk alerts
+
+---
+
+## 5️⃣ Testing
+- View live data on Blynk dashboard.
+- Adjust soil moisture (dry/wet) and see automatic pump control.
+- Use V4 switch for manual control.
+
+---
+
+## 6️⃣ Expansion Ideas
+- Add multiple soil sensors for fusion.
+
+- Integrate weather API to skip watering before rainfall.
